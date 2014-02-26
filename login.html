@@ -1,0 +1,78 @@
+<head>
+    <title> The Cybit Notes App</title>
+
+</head>
+<body>
+<div class='container'>
+
+    {{> header }}
+
+    {{> inputDiv }}
+    {{> viewNotes}}
+</div>
+</body>
+
+<template name="header">
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Cybit Notes
+                <small>Take a note of everything...</small>
+            </h1>
+        </div>
+        <div class="">
+            {{ loginButtons align="left"}}
+        </div>
+    </div>
+</template>
+
+<template name="loginbar">
+    <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Cybit Notes </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Link</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {{ loginButtons align="right"}}
+            </ul>
+        </div>
+    </div>
+</template>
+
+
+<template name="inputDiv">
+    <div class="container">
+        <div class="input-group input-group-lg ">
+            <input id="noteText" type="text" class="form-control" placeholder="Enter the note details">
+                 <span class="input-group-btn">
+                <button id='btn' class="btn btn-default" type="button">Submit</button>
+          </span>
+        </div>
+    </div>
+</template>
+
+<template name="viewNotes">
+    <div class="container" style="margin-top: 15px">
+        <div class="row">
+            {{#each notes}}
+            <div class="col-sm-4 col-md-4">
+                <div class="thumbnail alert-success">
+                    <div class="caption">
+
+                        <p><a href="#" class=" btn-link btn-xs" role="button">Edit</a>
+                            <a id="del" href="#" class="btn-link btn-xs" role="button">Delete</a>
+                        </p>
+
+                        <p> {{text}}</p>
+                    </div>
+                </div>
+            </div>
+            {{else }}
+            <div class="col-lg-12 col-md-12"><h2> No Notes available... </h2></div>
+            {{/each}}
+        </div>
+    </div>
+</template>
