@@ -4,9 +4,7 @@
 </head>
 <body>
 <div class='container'>
-
     {{> header }}
-
     {{> inputDiv }}
     {{> viewNotes}}
 </div>
@@ -20,9 +18,7 @@
                 <small>Take a note of everything...</small>
             </h1>
         </div>
-        <div class="">
-            {{ loginButtons align="left"}}
-        </div>
+
     </div>
 </template>
 
@@ -48,9 +44,15 @@
         <div class="input-group input-group-lg ">
             <input id="noteText" type="text" class="form-control" placeholder="Enter the note details">
                  <span class="input-group-btn">
-                <button id='btn' class="btn btn-default" type="button">Submit</button>
-          </span>
+                    <button id='btn' class="btn btn-default" type="button">Submit</button>
+                </span>
         </div>
+        <div class="input-group input-group-sm">
+            <input id="noteTag" type="text" class="form-control" placeholder="Type for tags separated by comma">
+            <span class="input-group-addon">
+
+                </span>
+         </div>
     </div>
 </template>
 
@@ -61,13 +63,17 @@
             <div class="col-sm-4 col-md-4">
                 <div class="thumbnail alert-success">
                     <div class="caption">
-
-                        <p><a href="#" class=" btn-link btn-xs" role="button">Edit</a>
-                            <a id="del" href="#" class="btn-link btn-xs" role="button">Delete</a>
+                        <p class="lnk pull-right"><a href="#" class="btn-link btn-xs" role="button">Edit</a>
+                            <a href="#" class="btn-link btn-xs del btn-danger" role="button">Delete</a>
                         </p>
-
-                        <p> {{text}}</p>
+                        <p class="tags pull-left">
+                            {{#each tags}}
+                             <span class="">{{this}}</span>
+                            {{/each}}
+                        </p>
+                        <hr>
                     </div>
+                    <p class="txt"> {{text}}</p>
                 </div>
             </div>
             {{else }}

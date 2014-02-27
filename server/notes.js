@@ -3,7 +3,7 @@
  */
 Notes = new Meteor.Collection("notes");
 Meteor.publish('notes',function(){
-	return Notes.find({name:'AAAA'});
+	return Notes.find({});
 });
 
 
@@ -14,14 +14,22 @@ Notes.allow({
 });
 
 Meteor.methods({
-	saveNote: function(name, noteText){
-		    Notes.insert({
+	saveNote: function(name, noteText,nodeTag){
+            tagsArr = nodeTag.split(',')
+            var id = Notes.insert({
             name: name,
             text: noteText,
-            time: Date.now()
+            time: Date.now(),
+            tags: tagsArr
+
         });
-      
-	}
+//        console.log('inserted new note '+id);
+	},
+
+    deleteNote: function(id) {
+//        console.log('delete called on '+id)
+        Notes.remove({_id:id});
+    }
 
 });
 
