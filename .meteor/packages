@@ -8,6 +8,7 @@ insecure
 preserve-inputs
 bootstrap-3
 jquery
-accounts-ui
 accounts-facebook
 accounts-google
+accounts-ui-bootstrap-3
+iron-router

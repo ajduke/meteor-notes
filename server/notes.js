@@ -2,8 +2,9 @@
  * Created by abhijeet on 26/2/14.
  */
 Notes = new Meteor.Collection("notes");
-Meteor.publish('notes',function(){
-	return Notes.find({});
+
+Meteor.publish('notes',function(tgs){
+    return tgs? Notes.find({tags:tgs}) : Notes.find({});
 });
 
 
@@ -16,6 +17,7 @@ Notes.allow({
 Meteor.methods({
 	saveNote: function(name, noteText,nodeTag){
             tagsArr = nodeTag.split(',')
+           // save note as by default
             var id = Notes.insert({
             name: name,
             text: noteText,
@@ -23,7 +25,8 @@ Meteor.methods({
             tags: tagsArr
 
         });
-//        console.log('inserted new note '+id);
+        // save tags by default
+//      console.log('inserted new note '+id);
 	},
 
     deleteNote: function(id) {
