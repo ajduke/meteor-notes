@@ -1,4 +1,5 @@
 Notes = new Meteor.Collection("notes");
+Tags = new Meteor.Collection("tags");
 
 //Router.map( function () {
 //        this.route('home');
@@ -16,21 +17,17 @@ Meteor.startup( function () {
 
     Meteor.autorun(function() {
         Meteor.subscribe("notes", Session.get("selectedTag"));
+
     });
 
-
-
+    Meteor.subscribe("tags");
 }); // end of startup
 
 // Handlebars if eq helper definition
-Handlebars.registerHelper('if_eq', function(a,  opts) {
-    console.log('Param '+a);
-    console.log('Meteor Id '+Meteor.userId());
-    if(a === Meteor.userId()){
-        console.log('matched..........')
+Handlebars.registerHelper('if_eq', function(ownerId,  opts) {
+    if(ownerId === Meteor.userId()){
         return opts.fn(this);
-    }
-    else{
+    }  else{
         return opts.inverse(this);
     }
 });
@@ -47,21 +44,33 @@ Meteor.autorun(function () {
     }
 });
 
+Template.viewNotes.notes = function(){
+    return Notes.find({},{sort:{time:-1}});
+}
+
+Template.tagCloud.availableTags= function() {
+    return Tags.find();
+};
+
 Template.tagAlert.selectedTag= function() {
         return Session.get('selectedTag');
     };
 
-Template.tagAlert.events={
+Template.tagAlert.events = {
     'click .all' : function(event){
         Session.set('selectedTag','');
     }
-
 }
 
+Template.tagCloud.events = {
+    'click .tgname' : function(event){
+        var anch = $(event.target);
+        Session.set("selectedTag", anch.text().trim());
+    }
+}
 Template.viewNotes.events = {
     'click .del' : function(event){
         var id= this._id;
-        console.log('delete called '+id)
         if(id){
             Meteor.call('deleteNote',id);
         }
@@ -88,6 +97,9 @@ Template.viewNotes.events = {
     }
 
 }
+Template.inputForm.isLoggedIn = function(){
+  return Meteor.userId();
+};
 
 Template.inputNote.events = {
     'click #btn' : function(event){
@@ -98,7 +110,7 @@ Template.inputNote.events = {
             saveNotes(event)
         }
     }
-}
+};
 
 function saveNotes(event){
 
@@ -110,6 +122,7 @@ function saveNotes(event){
         tagsArr = nodeTag.split(',');
         if(tagsArr.length <=3) {
             var ownerId=Session.get('userId');
+            nodeTag= nodeTag ==='' ? null: nodeTag;
             Meteor.call('saveNote', noteText.val(),nodeTag, ownerId);
             noteText.val('');
             $noteTag.val('');
@@ -125,6 +138,3 @@ function saveNotes(event){
     }
 }
 
-Template.viewNotes.notes = function(){
-    return Notes.find({},{sort:{time:-1}});
-}

@@ -1,51 +1,50 @@
 <template name="viewNotes">
     <div class="container" style="margin-top: 15px">
-       {{> tagAlert}}
+        {{> tagAlert}}
 
         <div class="row">
             {{#each notes}}
             <div class="col-sm-4 col-md-4">
-                <div class="thumbnail">
-                    <div class="caption">
+                <div class="thumbnail alert-warning">
+                    <div class="caption ">
                         {{#if_eq ownerId }}
                         <p class="lnk pull-right">
                             <a href="#" class="btn-link btn-xs" role="button">Edit</a>
-                            <a href="#" class="btn-link btn-xs btn-danger del" role="button">Delete</a>
+                            <a href="#" class="btn-link btn-danger btn-xs del" role="button">Delete</a>
 
                         </p>
-
                         {{/if_eq}}
 
                         <p class="text-left">
                             {{#each tags}}
-
-                            <span class="small ">
-
-                            <button href="#" class="btn btn-default btn-xs tgs" role="button"> {{this}} </button>
+                            <span class="small"><button href="#" class="btn btn-default btn-xs tgs" role="button"> {{this}}</button>
                             </span>
-
                             {{/each}}
                         </p>
 
                     </div>
-                    <p class="txt text-center text-success"> {{text}}</p>
+                    <p class="txt text-left text-warning"> {{text}}</p>
                 </div>
             </div>
             {{else }}
-            <div class="col-lg-12 col-md-12"><h2> No Notes available... </h2></div>
+            <div class="col-lg-12 col-md-12"><h2 class="alert alert-warning"> No Notes to show </h2></div>
             {{/each}}
         </div>
     </div>
 </template>
 
 <template name="tagAlert">
+
+
         {{#if selectedTag}}
-        <div class="alert alert-info">
-          You are viewing notes tagged <label class="badge"> {{selectedTag}} </label>.
-            <span class="glyphicon glyphicon-hand-right"></span><a href="#" class="all" > Click here </a>
-              to view all notes
+        <div class="alert alert-warning text-center">
+            Showing Notes tagged with <span class="badge"> {{selectedTag}} </span>
+
+            <span class="glyphicon glyphicon-hand-right"></span><a href="#" class="all"> Click here </a>
+            to view all notes
 
         </div>
         {{/if}}
+
 
 </template>

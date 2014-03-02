@@ -17,6 +17,7 @@
 <template name="home">
     {{> navBar}}
     {{> inputNote }}
+
     {{> viewNotes }}
 </template>
 
@@ -31,22 +32,29 @@
     </div>
 </template>
 
+
 <template name="navBar">
     <div class="container">
-    <div class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand" href="#">Cybit Notes</a>
+            <p class="navbar-text">Take Note of everything</p>
 
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
 
-            </ul>
             <ul class="nav navbar-nav navbar-right">
                 {{ loginButtons }} <!-- here -->
+
             </ul>
         </div>
-    </div>
+    </nav>
     </div>
 </template>
 
