@@ -1,11 +1,12 @@
 <head>
     <title>The Cybit Notes App </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="client/bootstrap-tagsinput/bootstrap-tagsinput.css">
-    <script type="text/javascript" src="client/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+    <link rel="stylesheet" type="text/css" href="client/templates/dependencies/bootstrap-tagsinput/bootstrap-tagsinput.css">
+    <script type="text/javascript" src="client/templates/dependencies/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
 </head>
 
 <body>
+{{> home}}
 </body>
 
 <template name="logInTemplate">
@@ -15,13 +16,24 @@
 
 <template name="home">
     {{> navBar}}
-    {{> inputDiv }}
+    {{> inputNote }}
     {{> viewNotes }}
+</template>
+
+<template name="header">
+    <div class="container">
+        <div class="page-header">
+            <h1>Cybit Notes
+                <small>Take a note of everything...</small>
+            </h1>
+        </div>
+
+    </div>
 </template>
 
 <template name="navBar">
     <div class="container">
-    <div class="navbar navbar-default navbar-inverse" role="navigation">
+    <div class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Cybit Notes</a>
 
@@ -37,18 +49,6 @@
     </div>
     </div>
 </template>
-
-<template name="header">
-    <div class="container">
-        <div class="page-header">
-            <h1>Cybit Notes
-                <small>Take a note of everything...</small>
-            </h1>
-        </div>
-
-    </div>
-</template>
-
 
 
 

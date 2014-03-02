@@ -1,22 +1,29 @@
 <template name="viewNotes">
     <div class="container" style="margin-top: 15px">
-       {{>tagCloud}}
+       {{> tagAlert}}
 
         <div class="row">
             {{#each notes}}
             <div class="col-sm-4 col-md-4">
                 <div class="thumbnail">
                     <div class="caption">
+                        {{#if_eq ownerId }}
                         <p class="lnk pull-right">
                             <a href="#" class="btn-link btn-xs" role="button">Edit</a>
                             <a href="#" class="btn-link btn-xs btn-danger del" role="button">Delete</a>
+
                         </p>
+
+                        {{/if_eq}}
 
                         <p class="text-left">
                             {{#each tags}}
-                            <span class="small">
-                            <a href="#" class="btn-link btn-xs tgs" role="button"> {{this}} </a>
+
+                            <span class="small ">
+
+                            <button href="#" class="btn btn-default btn-xs tgs" role="button"> {{this}} </button>
                             </span>
+
                             {{/each}}
                         </p>
 
@@ -31,12 +38,14 @@
     </div>
 </template>
 
-<template name="tagCloud">
-    <div class="alert alert-success">
+<template name="tagAlert">
         {{#if selectedTag}}
-          {{selectedTag}}
-        {{else}}
-           Reset Tag Selected <a href="#" class="all" >all </a> tags
+        <div class="alert alert-info">
+          You are viewing notes tagged <label class="badge"> {{selectedTag}} </label>.
+            <span class="glyphicon glyphicon-hand-right"></span><a href="#" class="all" > Click here </a>
+              to view all notes
+
+        </div>
         {{/if}}
-    </div>
+
 </template>

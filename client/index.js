@@ -1,11 +1,11 @@
 Notes = new Meteor.Collection("notes");
 
-Router.map( function () {
-        this.route('home');
-        this.route('logInTemplate', {
-            path: '/'
-        });
-}); // end of router map
+//Router.map( function () {
+//        this.route('home');
+//        this.route('logInTemplate', {
+//            path: '/'
+//        });
+//}); // end of router map
 
 Meteor.startup( function () {
     $('#noteTag').tagsinput({
@@ -18,30 +18,42 @@ Meteor.startup( function () {
         Meteor.subscribe("notes", Session.get("selectedTag"));
     });
 
-//    Meteor.subscribe('notes');
+
+
 }); // end of startup
 
-Meteor.autorun(function () {
-    if (Meteor.userId()) {
-        Router.go('/home');
-        console.log('User logged in');
-    } else {
-        Router.go('/');
-        console.log('User logged out');
+// Handlebars if eq helper definition
+Handlebars.registerHelper('if_eq', function(a,  opts) {
+    console.log('Param '+a);
+    console.log('Meteor Id '+Meteor.userId());
+    if(a === Meteor.userId()){
+        console.log('matched..........')
+        return opts.fn(this);
+    }
+    else{
+        return opts.inverse(this);
     }
 });
 
-Template.tagCloud.helpers={
-    selectedTag : function() {
-        console.log(Session.get('selectedTag'))
-        return Session.get('selectedTag');
+Meteor.autorun(function () {
+    if (Meteor.userId()) {
+//        Router.go('/home');
+        console.log('User logged in');
+        Session.set('userId',Meteor.userId());
+    } else {
+//        Router.go('/');
+        console.log('User logged out');
+        Session.set('userId','');
     }
+});
 
-};
+Template.tagAlert.selectedTag= function() {
+        return Session.get('selectedTag');
+    };
 
-Template.tagCloud.events={
-    'click .del' : function(event){
-
+Template.tagAlert.events={
+    'click .all' : function(event){
+        Session.set('selectedTag','');
     }
 
 }
@@ -56,7 +68,6 @@ Template.viewNotes.events = {
     },
     'click .tgs' : function(event){
         var anch = $(event.target);
-        console.log(anch.text())
         Session.set("selectedTag", anch.text().trim());
     },
     'mouseover div.thumbnail .txt': function(event){
@@ -78,7 +89,7 @@ Template.viewNotes.events = {
 
 }
 
-Template.inputDiv.events = {
+Template.inputNote.events = {
     'click #btn' : function(event){
         saveNotes(event)
     },
@@ -90,21 +101,22 @@ Template.inputDiv.events = {
 }
 
 function saveNotes(event){
-    var name = 'AAAA';
+
     var noteText = $('#noteText');
     var $noteTag = $('#noteTag');
 
     if (noteText.val() != '') {
         var nodeTag = $noteTag.val();
         tagsArr = nodeTag.split(',');
-        if(tagsArr.length <=3){
-            Meteor.call('saveNote', name, noteText.val(),nodeTag );
+        if(tagsArr.length <=3) {
+            var ownerId=Session.get('userId');
+            Meteor.call('saveNote', noteText.val(),nodeTag, ownerId);
             noteText.val('');
             $noteTag.val('');
             $noteTag.tagsinput('removeAll');
         }else {
             $noteTag.attr("placeholder", "Only upto 3 tags are allowed....!");
-            $noteTag.val('')
+            $noteTag.val('');
             $noteTag.tagsinput('removeAll');
         }
         noteText.attr("placeholder", "Enter the note details");

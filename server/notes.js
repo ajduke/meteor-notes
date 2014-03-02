@@ -15,14 +15,14 @@ Notes.allow({
 });
 
 Meteor.methods({
-	saveNote: function(name, noteText,nodeTag){
-            tagsArr = nodeTag.split(',')
+	saveNote: function( noteText,nodeTag,ownerIdentifier){
+            tagsArr = nodeTag.split(',');
            // save note as by default
             var id = Notes.insert({
-            name: name,
             text: noteText,
             time: Date.now(),
-            tags: tagsArr
+            tags: tagsArr,
+            ownerId:ownerIdentifier
 
         });
         // save tags by default
