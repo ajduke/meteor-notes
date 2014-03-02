@@ -15,6 +15,18 @@ Meteor.publish('tags', function () {
 Notes.allow({
     insert: function (name, noteText) {
         return false;
+    },
+    remove:function(){
+        return false;
+    }
+});
+
+Tags.allow({
+    insert: function () {
+        return false;
+    },
+    remove:function(){
+        return false;
     }
 });
 
