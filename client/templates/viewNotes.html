@@ -6,12 +6,11 @@
             {{#each notes}}
             <div class="col-sm-4 col-md-4">
                 <div class="thumbnail alert-warning">
-                    <div class="caption ">
+                    <div class="caption">
                         {{#if_eq ownerId }}
                         <p class="lnk pull-right">
-                            <a href="#" class="btn-link btn-xs" role="button">Edit</a>
+                            <!--<a href="#" class="btn-link btn-xs" role="button">Edit</a>-->
                             <a href="#" class="btn-link btn-danger btn-xs del" role="button">Delete</a>
-
                         </p>
                         {{/if_eq}}
 
@@ -23,7 +22,8 @@
                         </p>
 
                     </div>
-                    <p class="txt text-left text-warning"> {{text}}</p>
+                    <p class="txt text-center text-warning"> {{text}}</p>
+                    <p class="text-center text-primary">{{localTime}}</p>
                 </div>
             </div>
             {{else }}
