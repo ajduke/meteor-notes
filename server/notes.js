@@ -9,7 +9,7 @@ Meteor.publish('notes', function (tgs) {
 });
 
 Meteor.publish('tags', function () {
-    return Tags.find({count:{$gt:0}},{sort:{count:-1},limit:15});
+    return Tags.find({count:{$gt:0}},{limit:15});
 });
 
 Notes.allow({

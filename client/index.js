@@ -16,7 +16,7 @@ Meteor.startup( function () {
     Session.set("selectedTag", null);
 
     Meteor.autorun(function() {
-        Meteor.subscribe("notes", Session.get("selectedTag"));
+        Meteor.subscribe("notes", null);
 
     });
 
@@ -45,7 +45,8 @@ Meteor.autorun(function () {
 });
 
 Template.viewNotes.notes = function(){
-    return Notes.find({},{sort:{time:-1}});
+    var selectedTag =Session.get("selectedTag");
+    return  selectedTag? Notes.find({tags: selectedTag},{sort:{time:-1}}) : Notes.find({},{sort:{time:-1}});
 }
 
 Template.viewNotes.localTime = function(){
@@ -75,7 +76,7 @@ function formatAMPM(dateObj) {
 }
 
 Template.tagCloud.availableTags= function() {
-    return Tags.find();
+    return Tags.find({},{sort:{count:-1}});
 };
 
 Template.tagAlert.selectedTag= function() {
