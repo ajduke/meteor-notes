@@ -1,0 +1,19 @@
+.big .navbar .navbar-inner {
+    height: 60px;
+}
+
+.big-font {
+    font-size: 74px;
+}
+textarea {
+    resize: none;
+}
+
+.signIn{
+    color: rgba(52, 73, 94, 0.3);
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    padding-top: 5px;
+}

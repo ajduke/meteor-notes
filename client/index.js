@@ -91,8 +91,9 @@ Template.tagAlert.events = {
 
 Template.tagCloud.events = {
     'click .tgname' : function(event){
-        var anch = $(event.target);
-        Session.set("selectedTag", anch.text().trim());
+        var anch = $(event.currentTarget);
+        var asd=anch.find('.tagName');
+        Session.set("selectedTag", asd.text().trim());
     }
 }
 Template.viewNotes.events = {
@@ -124,7 +125,7 @@ Template.viewNotes.events = {
     }
 
 }
-Template.inputForm.isLoggedIn = function(){
+Template.inputNote.isLoggedIn = function(){
   return Meteor.userId();
 };
 

@@ -16,13 +16,16 @@
 
                         <p class="text-left">
                             {{#each tags}}
-                            <span class="small"><button href="#" class="btn btn-default btn-xs tgs" role="button"> {{this}}</button>
+                            <span class="small"><button href="#" class="btn btn-default btn-xs tgs" role="button">
+                                <span class="glyphicon glyphicon-tag" style="font-size:0.75em"></span>
+                                {{this}}
+                            </button>
                             </span>
                             {{/each}}
                         </p>
-
                     </div>
                     <p class="txt text-center text-warning"> {{text}}</p>
+
                     <p class="text-center text-primary">{{localTime}}</p>
                 </div>
             </div>
@@ -36,15 +39,17 @@
 <template name="tagAlert">
 
 
-        {{#if selectedTag}}
-        <div class="alert alert-warning text-center">
-            Showing Notes tagged with <span class="badge"> {{selectedTag}} </span>
+    {{#if selectedTag}}
+    <div class="container alert alert-warning">
+        <span class="pull-left"> Showing Notes tagged with <span class="badge"> {{selectedTag}} </span>
+                </span>
 
-            <span class="glyphicon glyphicon-hand-right"></span><a href="#" class="all"> Click here </a>
-            to view all notes
+            <span class="pull-right">
+                <span class="glyphicon glyphicon-hand-right"></span><a href="#" class="all"> All Notes </a>
+            </span>
 
-        </div>
-        {{/if}}
+    </div>
+    {{/if}}
 
 
 </template>
