@@ -5,7 +5,7 @@
         <div class="row">
             {{#each notes}}
             <div class="col-sm-4 col-md-4">
-                <div class="thumbnail alert-warning">
+                <div class="thumbnail note-bg" style="color: #DEDEDE">
                     <div class="caption">
                         {{#if_eq ownerId }}
                         <p class="lnk pull-right">
@@ -24,9 +24,9 @@
                             {{/each}}
                         </p>
                     </div>
-                    <p class="txt text-center text-warning"> {{text}}</p>
 
-                    <p class="text-center text-primary">{{localTime}}</p>
+                    <p class="txt text-center note-text"> {{text}}</p>
+                    <p class="text-center note-date">{{localTime}}</p>
                 </div>
             </div>
             {{else }}

@@ -9,7 +9,7 @@
 </template>
 
 <template name="NonSignedIn">
-        <div class="alert signIn"> Sign in to keep posting</div>
+        <div class="well well-sm signIn" style="margin-top: 5px"> Sign in to keep posting</div>
         <div class="row">
             <div class="col-sm-12 col-md-12">
                 {{> tagCloud}}
@@ -28,7 +28,7 @@
 </template>
 <template name="inputForm">
     <div class="panel panel-default">
-        <div class="panel-heading">Enter Note Details</div>
+        <div class="panel-heading notePanelTitle" >Enter Note Details</div>
         <div class="panel-body">
             <form data-role="form">
                 <div class="form-group">
@@ -50,7 +50,7 @@
 
 <template name="tagCloud">
     <div class="panel panel-default">
-        <div class="panel-heading">Tag Cloud</div>
+        <div class="panel-heading tgCloud">Tag Cloud</div>
         <div class="panel-body">
             {{#each availableTags}}
 

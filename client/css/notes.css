@@ -1,9 +1,13 @@
-.big .navbar .navbar-inner {
-    height: 60px;
-}
+/*.big .navbar .navbar-inner {*/
+    /*height: 60px;*/
+/*}*/
 
 .big-font {
     font-size: 74px;
+}
+.big-font1{
+    font-size: 60px;
+    font-weight: 700;
 }
 textarea {
     resize: none;
@@ -14,6 +18,30 @@ textarea {
     display: block;
     font-size: 22px;
     font-weight: 700;
-    letter-spacing: -1px;
-    padding-top: 5px;
+}
+
+.tgCloud, .notePanelTitle {
+    color: rgba(52, 73, 94, 0.3);
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.navbar-brand-color{
+    color: #333333;
+}
+.note-bg {
+    background-color: #F8F8F8;
+    border-color: #ddd;
+}
+
+.note-date {
+    color: #333333;
+    border-color:rgba(52, 73, 94, 0.3);
+    display: block;
+    font-weight: 700;
+}
+.note-text{
+    color: #333333;
+    display: block;
 }

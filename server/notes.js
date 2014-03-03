@@ -45,7 +45,6 @@ Meteor.methods({
 
         // saving tag in collection
         _.each(tagsArr, function (tg) {
-            console.log(tg)
             if (tg !== '') {
                 Tags.update({name: tg}, {$inc: {count: 1}}, {upsert: true});
             }
