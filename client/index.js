@@ -9,9 +9,7 @@ Tags = new Meteor.Collection("tags");
 //}); // end of router map
 
 Meteor.startup( function () {
-    $('#noteTag').tagsinput({
-        maxTags: 3
-    });
+
 
     Session.set("selectedTag", null);
 
@@ -22,6 +20,10 @@ Meteor.startup( function () {
 
     Meteor.subscribe("tags");
 }); // end of startup
+
+$('#noteTag').tagsinput({
+    maxTags: 3
+});
 
 // Handlebars if eq helper definition
 Handlebars.registerHelper('if_eq', function(ownerId,  opts) {
@@ -34,9 +36,11 @@ Handlebars.registerHelper('if_eq', function(ownerId,  opts) {
 
 Meteor.autorun(function () {
     if (Meteor.userId()) {
+
 //        Router.go('/home');
         console.log('User logged in');
         Session.set('userId',Meteor.userId());
+
     } else {
 //        Router.go('/');
         console.log('User logged out');

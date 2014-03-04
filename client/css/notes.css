@@ -13,6 +13,52 @@ textarea {
     resize: none;
 }
 
+.lnk a {
+    color: #000000;
+    font-weight: 700;
+}
+
+.thumb-top{
+    padding: 7px;
+    padding-bottom: 2px;
+    color: #333;
+}
+.thumbs{
+    display: block;
+    margin-top: 16px;
+    margin-right: 16px;
+    height: 247px;
+    overflow: hidden;
+
+}
+.header-container{
+    margin-top: 10px
+}
+
+.header-navbar{
+    height: 70px;
+}
+
+.shadow{
+    -webkit-box-shadow: 0 2px 8px rgba(0,0,0,0.4),
+    inset 0 0 3px rgba(230,230,230,0.2);
+    -moz-box-shadow: 0 2px 8px rgba(0,0,0,0.4),
+    inset 0 0 3px rgba(230,230,230,0.2);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4),
+    inset 0 0 3px rgba(230,230,230,0.2);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.nav-title{
+    font-size: 38px;
+    font-weight: 700;
+    display: block;
+    padding: 15px;
+    padding-top: 25px;
+}
+
 .signIn{
     color: rgba(52, 73, 94, 0.3);
     display: block;
@@ -38,10 +84,26 @@ textarea {
 .note-date {
     color: #333333;
     border-color:rgba(52, 73, 94, 0.3);
-    display: block;
     font-weight: 700;
+    font-size: 11px;
+    height: 10px;
 }
-.note-text{
+.note-text {
     color: #333333;
     display: block;
+}
+
+.tgAlert {
+    color: #000000;
+    display: block;
+    font-weight: 600;
+}
+
+.tgAlert a{
+    color: #000000;
+    font-weight: 600;
+}
+.txt {
+    padding: 5px;
+    padding-top: 0px;
 }

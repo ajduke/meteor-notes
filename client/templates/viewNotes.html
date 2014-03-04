@@ -4,9 +4,9 @@
 
         <div class="row">
             {{#each notes}}
-            <div class="col-sm-4 col-md-4">
-                <div class="thumbnail note-bg" style="color: #DEDEDE">
-                    <div class="caption">
+            <div class="col-sm-3 col-md-3">
+                <div class="thumbnail note-bg thumbs shadow" style="color: #DEDEDE">
+                    <div class="thumb-top">
                         {{#if_eq ownerId }}
                         <p class="lnk pull-right">
                             <!--<a href="#" class="btn-link btn-xs" role="button">Edit</a>-->
@@ -24,9 +24,9 @@
                             {{/each}}
                         </p>
                     </div>
-
-                    <p class="txt text-center note-text"> {{text}}</p>
                     <p class="text-center note-date">{{localTime}}</p>
+                    <p class="txt note-text"> {{text}}</p>
+
                 </div>
             </div>
             {{else }}
@@ -40,13 +40,17 @@
 
 
     {{#if selectedTag}}
-    <div class="container alert alert-warning">
-        <span class="pull-left"> Showing Notes tagged with <span class="badge"> {{selectedTag}} </span>
-                </span>
-
+    <div class="well well-sm tgAlert">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
             <span class="pull-right">
                 <span class="glyphicon glyphicon-hand-right"></span><a href="#" class="all"> All Notes </a>
             </span>
+            <span class="pull-left">
+                Showing Notes tagged with <span class="badge"> {{selectedTag}} </span>
+            </span>
+</div>
+            </div>
 
     </div>
     {{/if}}
