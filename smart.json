@@ -1,7 +1,15 @@
 {
   "packages": {
     "bootstrap-3": {},
-    "accounts-ui-bootstrap-3": {},
-    "iron-router": {}
+    "iron-router": {},
+    "momentjs": {},
+    "crypto-base": {},
+    "database-forms": {
+      "git": "git://github.com/SachaG/database-forms.git"
+    },
+    "crypto-md5": {},
+    "nprogress": {},
+    "fast-render": {},
+    "spin": {}
   }
 }
