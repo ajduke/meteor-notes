@@ -22,5 +22,13 @@ Deps.autorun(function() {
       // Subscribe to all users for now to make user selection autocomplete work
       Meteor.subscribe('allUsersAdmin');
     }
+      console.log('User logged in'+Meteor.userId());
+//      Router.go('/notes');
+      Session.set('userId',Meteor.userId());
+  }else{
+      Router.go('/');
+      console.log('User logged out');
+      Session.set('userId','');
   }
+
 });

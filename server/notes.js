@@ -4,6 +4,10 @@
 Notes = new Meteor.Collection("notes");
 Tags = new Meteor.Collection("tags");
 
+
+/////////////////// Routes ////////////////////
+
+
 Meteor.publish('notes', function (tgs) {
     return tgs ? Notes.find({tags: tgs}) : Notes.find({});
 });

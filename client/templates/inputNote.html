@@ -9,14 +9,17 @@
 </template>
 
 <template name="NonSignedIn">
+    <div class="container">
         <div class="well well-sm signIn" style="margin-top: 5px"> Sign in to keep posting</div>
         <div class="row">
             <div class="col-sm-12 col-md-12">
                 {{> tagCloud}}
             </div>
         </div>
+        </div>
 </template>
 <template name="signedInUser">
+    <div class="container">
         <div class="row">
             <div class="col-sm-4 col-md-4">
                 {{> inputForm}}
@@ -24,6 +27,7 @@
             <div class="col-sm-8 col-md-8">
                 {{> tagCloud}}
             </div>
+        </div>
         </div>
 </template>
 <template name="inputForm">

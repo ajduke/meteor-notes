@@ -34,20 +34,6 @@ Handlebars.registerHelper('if_eq', function(ownerId,  opts) {
     }
 });
 
-Meteor.autorun(function () {
-    if (Meteor.userId()) {
-
-//        Router.go('/home');
-        console.log('User logged in');
-        Session.set('userId',Meteor.userId());
-
-    } else {
-//        Router.go('/');
-        console.log('User logged out');
-        Session.set('userId','');
-    }
-});
-
 Template.viewNotes.notes = function(){
     var selectedTag =Session.get("selectedTag");
     return  selectedTag? Notes.find({tags: selectedTag},{sort:{time:-1}}) : Notes.find({},{sort:{time:-1}});
@@ -133,7 +119,7 @@ Template.inputNote.isLoggedIn = function(){
   return Meteor.userId();
 };
 
-Template.inputNote.events = {
+Template.inputForm.events = {
     'click #btn' : function(event){
         saveNotes(event)
     },

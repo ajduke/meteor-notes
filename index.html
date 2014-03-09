@@ -6,15 +6,20 @@
 </head>
 
 <body>
-{{> home}}
 </body>
+
+<template name="notesLayout">
+    {{> navBar}}
+    {{yield}}
+    {{> viewNotes }}
+</template>
 
 <template name="logInTemplate">
     {{> navBar }}
     {{> viewNotes }}
 </template>
 
-<template name="home">
+<template name="notes">
     {{> navBar}}
     {{> inputNote }}
 
