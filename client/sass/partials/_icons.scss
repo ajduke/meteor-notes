@@ -10,6 +10,8 @@
 	font-style: normal;
 }
 
+.telescope-wrapper * {
+
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
 	font-family: 'icomoon';
@@ -62,4 +64,5 @@
 }
 .icon-right:before {
 	content: "\2192";
+}
 }

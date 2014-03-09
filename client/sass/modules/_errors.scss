@@ -1,7 +1,9 @@
+.telescope-wrapper * {
 .error{
 	@extend .grid-block;
 	margin-bottom:$grid-margin;
 	text-align:center;
 	background:$red;
 	color:white;
+}
 }

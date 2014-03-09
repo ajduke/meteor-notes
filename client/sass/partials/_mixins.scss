@@ -20,7 +20,9 @@
 @function red($opacity){
 	@return rgba($red,$opacity);
 }
+.telescope-wrapper * {
 /*================ CLASSES =================*/
+
 .popover{
 	background:white;
 	border:1px solid $red;
@@ -39,6 +41,7 @@
 }
 .cf{
 	@include cf;
+}
 }
 /*================ MIXINS =================*/
 @mixin border-box{

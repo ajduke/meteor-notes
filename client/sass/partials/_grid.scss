@@ -1,3 +1,4 @@
+.telescope-wrapper * {
 // @import "susy";
 
 
@@ -21,6 +22,7 @@
 	margin:0 auto;
 }
 
+}
 
 $break-large: 1200px;
 
@@ -65,7 +67,6 @@ $break-large: 1200px;
 		}
 	}
 }
-
 // PHONE
 $phone-max-width:400px;
 @mixin phone(){

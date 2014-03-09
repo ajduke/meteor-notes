@@ -1,3 +1,4 @@
+.telescope-wrapper * {
 .filter-sort{
 	@include cf;
 	background: $lightest-grey;
@@ -75,4 +76,5 @@ table{
 		display: block;
 		float: right;
 	}
+}
 }

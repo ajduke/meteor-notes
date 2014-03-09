@@ -1,4 +1,5 @@
-form, .accounts-dialog{
+.telescope-wrapper * {
+form.ts, .accounts-dialog{
 	&.form-block{
 		background:$lightest-grey;
 		@include border-radius(3px);
@@ -92,7 +93,7 @@ form, .accounts-dialog{
 		font-size: 80%;
 	}
 }
-input[type="submit"], button, .button, .btn{
+.submitbutton, button.ts-button, .button, .btn{
 	-webkit-appearance: none;
 	@include border-radius(0px);
 	background:$red;
@@ -138,4 +139,5 @@ input[type="submit"], button, .button, .btn{
 	padding:10px;
 	font-size:14px;
 	@include box-shadow(0 1px 1px black(0.15));
+}
 }

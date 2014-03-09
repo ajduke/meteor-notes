@@ -1,3 +1,4 @@
+.telescope-wrapper * {
 .notifications{
 	position:fixed;
 	height:100%;
@@ -56,4 +57,5 @@
 		left:0px;
 		@include box-shadow(1px 0px 1px black(0.15));
 	}
+}
 }

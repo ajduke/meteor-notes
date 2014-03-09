@@ -1,3 +1,4 @@
+.telescope-wrapper * {
 .has-tooltip{
 	position:relative;
 	.tooltip{
@@ -35,4 +36,6 @@
 	&:hover .tooltip{
 		opacity:1;
 	}
+}
+
 }
