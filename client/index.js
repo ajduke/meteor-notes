@@ -40,6 +40,10 @@ Meteor.autorun(function () {
 //        Router.go('/home');
         console.log('User logged in');
         Session.set('userId',Meteor.userId());
+      setTimeout(function(){
+        $('#noteTag').tagsinput('refresh');
+      },200)
+
 
     } else {
 //        Router.go('/');
