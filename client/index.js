@@ -137,7 +137,7 @@ Template.inputNote.isLoggedIn = function(){
   return Meteor.userId();
 };
 
-Template.inputNote.events = {
+Template.inputForm.events = {
     'click #btn' : function(event){
         saveNotes(event)
     },

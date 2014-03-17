@@ -1,74 +1,76 @@
 <template name="inputNote">
-    <div class="container">
+  <div class="container">
     {{#if isLoggedIn}}
     {{> signedInUser}}
     {{else}}
     {{> NonSignedIn}}
     {{/if}}
-    </div>
+  </div>
 </template>
 
 <template name="NonSignedIn">
-        <div class="well well-sm signIn" style="margin-top: 5px"> Sign in to keep posting</div>
-        <div class="row">
-            <div class="col-sm-12 col-md-12">
-                {{> tagCloud}}
-            </div>
-        </div>
-</template>
-<template name="signedInUser">
-        <div class="row">
-            <div class="col-sm-4 col-md-4">
-                {{> inputForm}}
-            </div>
-            <div class="col-sm-8 col-md-8">
-                {{> tagCloud}}
-            </div>
-        </div>
-</template>
-<template name="inputForm">
-    <div class="panel panel-default shadow">
-        <div class="panel-heading notePanelTitle" >Enter Note Details</div>
-        <div class="panel-body">
-            <form data-role="form">
-                <div class="form-group">
-
-                    <textarea id="noteText" class="form-control " cols="3" rows="4"
-                              placeholder="Enter the note details"></textarea>
-
-                    <div class="tags" style="margin-top: 5px">
-                        <input id="noteTag" type="text" data-role="tagsinput"
-                               class="form-control bootstrap-tagsinput-max"
-                               placeholder="Type a tag and hit enter ">
-                    </div>
-                    <button id='btn' class="btn btn-default btn-block" type="button">Submit</button>
-                </div>
-            </form>
-        </div>
+    <div class="well well-sm signIn" style="margin-top: 5px"> Sign in to keep posting</div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        {{> tagCloud}}
+      </div>
     </div>
 </template>
 
+<template name="signedInUser">
+    <div class="row">
+      <div class="col-sm-4 col-md-4">
+        {{> inputForm}}
+      </div>
+      <div class="col-sm-8 col-md-8">
+        {{> tagCloud}}
+      </div>
+    </div>
+</template>
+
+<template name="inputForm">
+  <div class="panel panel-default shadow">
+    <div class="panel-heading notePanelTitle">Enter Note Details</div>
+    <div class="panel-body">
+      <form data-role="form">
+        <div class="form-group">
+
+          <textarea id="noteText" class="form-control " cols="3" rows="4"
+                    placeholder="Enter the note details"></textarea>
+
+          <div class="tags" style="margin-top: 5px">
+            <input id="noteTag" type="text" data-role="tagsinput"
+                   class="form-control bootstrap-tagsinput-max"
+                   placeholder="Type a tag and hit enter ">
+          </div>
+          <button id='btn' class="btn btn-default btn-block" type="button">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
+
 <template name="tagCloud">
-    <div class="panel panel-default shadow">
-        <div class="panel-heading tgCloud">Tag Cloud</div>
-        <div class="panel-body">
-            {{#each availableTags}}
+  <div class="panel panel-default shadow">
+    <div class="panel-heading tgCloud">Tag Cloud</div>
+    <div class="panel-body">
+      {{#each availableTags}}
 
             <span class="small" style="margin-left: 5px">
                 <button href="#" class="btn btn-default btn-xs tgname" role="button">
-                    <span class="glyphicon glyphicon-tag" style="font-size:0.75em"></span>
-                    <span class="tagName">{{name}}</span>
-                    <span class="badge" style="font-size: 0.899em">{{count}}</span>
+                  <span class="glyphicon glyphicon-tag" style="font-size:0.75em"></span>
+                  <span class="tagName">{{name}}</span>
+                  <span class="badge" style="font-size: 0.899em">{{count}}</span>
                 </button>
 
             {{else }}
             <div class="container-fluid">
-                <h5 class="well well-sm signIn">No Tags to show
-                </h5>
+              <h5 class="well well-sm signIn">No Tags to show
+              </h5>
             </div>
             {{/each}}
-        </div>
     </div>
+  </div>
 
 
 </template>
