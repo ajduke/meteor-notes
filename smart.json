@@ -1,7 +1,9 @@
 {
   "packages": {
     "bootstrap-3": {},
-    "accounts-ui-bootstrap-3": {},
-    "iron-router": {}
+    "iron-router": {},
+    "meteor-telescope": {
+      "path": "/home/abhijeet/workspace/meteor-telescope"
+    }
   }
 }
