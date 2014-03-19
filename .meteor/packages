@@ -10,5 +10,7 @@ bootstrap-3
 jquery
 accounts-facebook
 accounts-google
-accounts-ui-bootstrap-3
 iron-router
+meteor-telescope
+accounts-ui-bootstrap-3
+database-forms
