@@ -3,7 +3,6 @@ Deps.autorun(function() {
   // userId() can be changed before user(), because loading profile takes time
   if(Meteor.userId()) {
 //      Router.go('/notes');
-    console.log(AppConfig.title)
 
     Session.set('userId',Meteor.userId());
   }else{
@@ -11,11 +10,16 @@ Deps.autorun(function() {
     console.log('User logged out');
     Session.set('userId','');
   }
+
 });
 
 Meteor.startup(function () {
-  console.log('Startup called..')
-  AppConfig.title='Yo Yo'
-  AppConfig.appBaseUrl='quebec'
-  telescopeRoutes(AppConfig.appBaseUrl);
+//  TelescopeConfig.title='Cybit QA'
+  TelescopeConfig.siteUrl='mum'
+  TelescopeConfig.enableNotifications=true
+  TelescopeConfig.enableUserLinks=true
+  TelescopeConfig.enableCategories=true
+//  TelescopeConfig.backgroudColor='#353535'
+
+  telescopeRoutes(TelescopeConfig.appBaseUrl);
 });
