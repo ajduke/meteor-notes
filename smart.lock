@@ -5,7 +5,7 @@
       "bootstrap-3": {},
       "iron-router": {},
       "meteor-telescope": {
-        "path": "../../meteor-telescope"
+        "path": "../meteor-telescope"
       }
     },
     "packages": {
@@ -20,7 +20,7 @@
         "commit": "927bbaed1b87894fb6fb70807f74ff3a5bd89f29"
       },
       "meteor-telescope": {
-        "path": "../../meteor-telescope"
+        "path": "../meteor-telescope"
       },
       "jquery": {
         "git": "https://github.com/nrafter/meteor-jquery.git",
@@ -41,7 +41,12 @@
         "git": "https://github.com/crapthings/meteor-momentjs.git",
         "tag": "v2.1.0.2",
         "commit": "59a762e297082eea8b8cae00374c2b7ac6f89529"
-      }
+      },
+      "mailchimp": {
+        "git": "https://github.com/MiroHibler/meteor-mailchimp.git",
+        "tag": "v0.2.0",
+        "commit": "a714b79dc4992ec2bbdbc9a152d13aab114bae3c"
+      },
       "nprogress": {
         "git": "https://github.com/zhouzhuojie/meteor-nprogress.git",
         "tag": "v0.0.3",

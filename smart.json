@@ -3,7 +3,7 @@
     "bootstrap-3": {},
     "iron-router": {},
     "meteor-telescope": {
-      "path": "/home/abhijeet/workspace/meteor-telescope"
+      "path": "../meteor-telescope"
     }
   }
 }

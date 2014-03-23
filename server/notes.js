@@ -68,3 +68,10 @@ Meteor.methods({
 
 });
 
+if(Meteor.isServer){
+  Meteor.startup(function () {
+    TelescopeConfig.enableNotifications=true
+    TelescopeConfig.siteUrl='mum'
+    telescopeRoutesServer(TelescopeConfig.siteUrl);
+  });
+}
