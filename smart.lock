@@ -16,11 +16,16 @@
       },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.6.4",
-        "commit": "927bbaed1b87894fb6fb70807f74ff3a5bd89f29"
+        "tag": "v0.7.0",
+        "commit": "05f34bc48c4cad9fdaa366c1ddcabe6980232ece"
       },
       "meteor-telescope": {
         "path": "../meteor-telescope"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.2.2",
+        "commit": "8bc53798fe5965669ae67c72f91829fcfdceabfd"
       },
       "jquery": {
         "git": "https://github.com/nrafter/meteor-jquery.git",
@@ -42,20 +47,15 @@
         "tag": "v2.1.0.2",
         "commit": "59a762e297082eea8b8cae00374c2b7ac6f89529"
       },
-      "mailchimp": {
-        "git": "https://github.com/MiroHibler/meteor-mailchimp.git",
-        "tag": "v0.2.0",
-        "commit": "a714b79dc4992ec2bbdbc9a152d13aab114bae3c"
-      },
       "nprogress": {
         "git": "https://github.com/zhouzhuojie/meteor-nprogress.git",
-        "tag": "v0.0.3",
-        "commit": "ffd1c5dd400af64121197f4e637a215c4b6b1fc7"
+        "tag": "v0.0.4",
+        "commit": "8333206b751a24fac1fbd1b03fa37621bcefe50c"
       },
       "fast-render": {
         "git": "https://github.com/arunoda/meteor-fast-render.git",
-        "tag": "v0.1.19",
-        "commit": "9e9a34e51885474c0dd9ed7a64dbff7ee9d4315c"
+        "tag": "v0.1.23",
+        "commit": "933b9d8992f1c7004f9993b1b15dffe3bac672f3"
       },
       "spin": {
         "git": "https://github.com/SachaG/meteor-spin.git",
