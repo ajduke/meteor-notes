@@ -13,15 +13,3 @@ Deps.autorun(function() {
 
 });
 
-Meteor.startup(function () {
-
-  TelescopeConfig.title='Cybit QA'
-  TelescopeConfig.siteUrl='mum'
-  TelescopeConfig.enableNotifications=true
-  TelescopeConfig.enableUserLinks=true
-  TelescopeConfig.enableCategories=true
-  TelescopeConfig.backgroudColor='#5e5e5e'
-
-  telescopeRoutes(TelescopeConfig.siteUrl);
-});
-
