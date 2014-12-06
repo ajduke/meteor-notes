@@ -1,5 +1,5 @@
 // rendered goes here
-Template.inputForm.rendered = function(){
+Template.input_form.rendered = function(){
   $('#noteTag').tagsinput({
     maxTags: 3,
     trimValue: true
@@ -35,13 +35,13 @@ Template.view_notes.helpers({
 
 })
 
-Template.tagCloud.helpers({
+Template.tag_cloud.helpers({
   availableTags: function () {
     return Tags.find({}, {sort: {count: -1}});
   }
 })
 
-Template.tagCloud.events ({
+Template.tag_cloud.events ({
   'click .tgname': function (event) {
     var anch = $(event.currentTarget);
     var asd = anch.find('.tagName');
@@ -83,7 +83,7 @@ Template.view_notes.events ({
 
 })
 
-Template.inputForm.events({
+Template.input_form.events({
   'keydown input#noteText': function (event) {
     if (event.which == 13) { // 13 is the enter key event
       $("#btn").trigger('click')
