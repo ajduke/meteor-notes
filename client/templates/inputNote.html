@@ -1,8 +1,9 @@
 <template name="input_note">
   <div class="container">
-    {{#if isLoggedIn}}
+    {{#if currentUser}}
     {{> signedInUser}}
     {{else}}
+      <!--{> Template.dynamic template=templateName}}-->
     {{> NonSignedIn}}
     {{/if}}
   </div>
@@ -56,11 +57,11 @@
     <div class="panel-body">
       {{#each availableTags}}
         <span class="small" style="margin-left: 5px">
-            <button href="#" class="btn btn-default btn-xs tgname" role="button">
+            <a href="#" class="btn btn-default btn-xs tgname" role="button">
               <span class="glyphicon glyphicon-tag" style="font-size:0.75em"></span>
               <span class="tagName">{{name}}</span>
               <span class="badge" style="font-size: 0.899em">{{count}}</span>
-            </button>
+            </a>
         </span>
       {{else}}
         <div class="container-fluid">

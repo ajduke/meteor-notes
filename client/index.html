@@ -1,41 +1,4 @@
-<head>
-  <title>The Cybit Notes App </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<body>
-</body>
-
-<template name="logInTemplate">
-  {{> navBar }}
-  {{> viewNotes }}
-</template>
-
 <template name="notesLayout">
-  {{> navBar}}
-  {{> yield}}
-  {{> viewNotes }}
-</template>
-
-<template name="home">
-  {{> navBar}}
-  {{> input_note }}
-  {{> viewNotes }}
-</template>
-
-<template name="header">
-  <div class="container">
-    <div class="page-header">
-      <h1>Cybit Notes
-        <small>Take a note of everything...</small>
-      </h1>
-    </div>
-
-  </div>
-</template>
-
-
-<template name="navBar">
   <div class="container header-container">
     <div class="navbar navbar-default header-navbar" role="navigation">
       <div class="navbar-header">
@@ -47,26 +10,20 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand nav-title" href="#">Cybit Notes</a>
-
-
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1234">
         <ul class="nav navbar-nav navbar-right ">
           {{> loginButtons }} <!-- here -->
           <li class="dropdown">
-
           </li>
-
         </ul>
-
       </div>
     </div>
   </div>
 
-
+  {{> input_note}}
+  {{> viewNotes}}
 </template>
-
-
 
 

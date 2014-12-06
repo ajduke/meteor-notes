@@ -14,15 +14,24 @@ textarea {
 }
 
 .lnk a {
-    color: #000000;
+    color: #E23434;
     font-weight: 700;
+    background: #ddd;
+    padding: 5px;
+}
+.lnk a:hover {
+    background: #ddd;
+    color: #E23434;
+    text-decoration: none;
+    opacity: 0.8;
 }
 
 .thumb-top{
-    padding: 7px;
-    padding-bottom: 2px;
+    padding: 7px 7px 2px;
     color: #333;
+    overflow: auto;
 }
+
 .thumbs{
     display: block;
     margin-top: 16px;
