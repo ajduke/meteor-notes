@@ -5,11 +5,12 @@
 
 standard-app-packages
 insecure
-preserve-inputs
-bootstrap-3
 jquery
 accounts-facebook
 accounts-google
-accounts-ui-bootstrap-3
-iron-router
-nprogress
+mizzao:bootstrap-3
+iron:router
+ian:accounts-ui-bootstrap-3
+mrt:nprogress
+accounts-base
+

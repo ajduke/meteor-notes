@@ -1,4 +1,4 @@
-<template name="inputNote">
+<template name="input_note">
   <div class="container">
     {{#if isLoggedIn}}
     {{> signedInUser}}
@@ -55,22 +55,18 @@
     <div class="panel-heading tgCloud">Tag Cloud</div>
     <div class="panel-body">
       {{#each availableTags}}
-
-            <span class="small" style="margin-left: 5px">
-                <button href="#" class="btn btn-default btn-xs tgname" role="button">
-                  <span class="glyphicon glyphicon-tag" style="font-size:0.75em"></span>
-                  <span class="tagName">{{name}}</span>
-                  <span class="badge" style="font-size: 0.899em">{{count}}</span>
-                </button>
-
-            {{else }}
-            <div class="container-fluid">
-              <h5 class="well well-sm signIn">No Tags to show
-              </h5>
-            </div>
-            {{/each}}
+        <span class="small" style="margin-left: 5px">
+            <button href="#" class="btn btn-default btn-xs tgname" role="button">
+              <span class="glyphicon glyphicon-tag" style="font-size:0.75em"></span>
+              <span class="tagName">{{name}}</span>
+              <span class="badge" style="font-size: 0.899em">{{count}}</span>
+            </button>
+        </span>
+      {{else}}
+        <div class="container-fluid">
+          <h5 class="well well-sm signIn"> No Tags to show </h5>
+        </div>
+      {{/each}}
     </div>
   </div>
-
-
 </template>

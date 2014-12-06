@@ -13,14 +13,13 @@
 
 <template name="notesLayout">
   {{> navBar}}
-  {{yield}}
+  {{> yield}}
   {{> viewNotes }}
 </template>
 
 <template name="home">
   {{> navBar}}
-  {{> inputNote }}
-
+  {{> input_note }}
   {{> viewNotes }}
 </template>
 
@@ -54,7 +53,7 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1234">
         <ul class="nav navbar-nav navbar-right ">
-          {{ loginButtons }} <!-- here -->
+          {{> loginButtons }} <!-- here -->
           <li class="dropdown">
 
           </li>

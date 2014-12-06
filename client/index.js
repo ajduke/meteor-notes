@@ -111,7 +111,7 @@ Template.viewNotes.events = {
   }
 
 }
-Template.inputNote.isLoggedIn = function () {
+Template.input_note.isLoggedIn = function () {
   return Meteor.userId();
 };
 
