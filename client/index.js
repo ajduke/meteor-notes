@@ -98,7 +98,7 @@ Template.input_form.events({
       var nodeTag = $noteTag.val();
       tagsArr = nodeTag.split(',');
       if (tagsArr.length <= 3) {
-        var ownerId = Session.get('userId');
+        var ownerId = Meteor.userId();
         nodeTag = nodeTag === '' ? 'untagged' : nodeTag;
         Meteor.call('saveNote', noteText.val(), nodeTag, ownerId);
         noteText.val('');
