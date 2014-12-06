@@ -2,6 +2,7 @@
 Template.inputForm.rendered = function(){
   $('#noteTag').tagsinput({
     maxTags: 3,
+    trimValue: true
   });
 }
 
@@ -16,7 +17,7 @@ Template.input_note.helpers({
   }
 })
 
-Template.viewNotes.helpers({
+Template.view_notes.helpers({
   notes: function() {
     var selectedTag = Session.get("selectedTag");
     return  selectedTag ? Notes.find({tags: selectedTag}, {sort: {time: -1}}) : Notes.find({}, {sort: {time: -1}});
@@ -48,7 +49,7 @@ Template.tagCloud.events ({
   }
 })
 
-Template.viewNotes.events ({
+Template.view_notes.events ({
   'click .all': function (event) {
     Session.set('selectedTag', '');
   },
