@@ -4,13 +4,19 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-insecure
-jquery
-accounts-facebook
-accounts-google
+insecure@1.0.7
+jquery@1.11.10
+accounts-facebook@1.3.0
+accounts-google@1.3.0
 mizzao:bootstrap-3
 iron:router
 ian:accounts-ui-bootstrap-3
 mrt:nprogress
-accounts-base
+accounts-base@1.4.0
 
+standard-minifier-css
+standard-minifier-js
+shell-server
+facebook-config-ui
+google-config-ui
+dynamic-import
